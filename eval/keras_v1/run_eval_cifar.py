@@ -1,8 +1,11 @@
 from eval_attr import Eval
-import keras
 import tensorflow as tf
 import keras.backend as K
-from keras_model import res_20
+
+import sys
+sys.path.append("../../")
+
+from models.keras_model import res_20
 import numpy as np
 import pickle
 import argparse
@@ -72,8 +75,8 @@ param_dict['step_size'] = param_dict['step_size'] / (255. /
 
 print(args.attr_fn, "   ", param_dict['epsilon'], "   ", args.weight_file)
 print("True Epsilon", "   ", param_dict['epsilon'] * 255)
-evaluation_result = evaluate.run_attack(x_test[:500],
-                                        pred[:500],
+evaluation_result = evaluate.run_attack(x_test,
+                                        pred,
                                         mean_image=None,
                                         param_dict=param_dict,
                                         analysis=True)

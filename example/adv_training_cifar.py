@@ -7,7 +7,6 @@ import logging
 import numpy as np
 import tensorflow as tf
 from robust.adv_utils import AdversarialGenerator, AdversarialTraining
-import keras
 from models.keras_model import res_20
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping, LearningRateScheduler
 from keras.optimizers import Adam, SGD

@@ -11,16 +11,14 @@ import numpy as np
 import tensorflow as tf
 from models.keras_model import res_20
 from keras.datasets import cifar10
-from keras.utils.np_utils import to_categorical
 from robust.ig_norm import train_ig_norm_model
-from keras.optimizers import Adam, SGD
-from time import time
+from keras.optimizers import Adam
 tf.reset_default_graph()
 
 # %%
 
 
-def get_session(number=None):
+def get_session():
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     return tf.Session(config=config)
