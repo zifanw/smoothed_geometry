@@ -6,17 +6,13 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import sys
 sys.path.append("../")
 
-from time import time
 import keras.backend as K
-from keras.utils.np_utils import to_categorical
 from keras.datasets import cifar10
-from keras.optimizers import Adam, SGD
+from keras.optimizers import Adam
 import numpy as np
-import gzip
-import pickle as pkl
+
 from models.keras_model import res_20
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping, LearningRateScheduler
-from keras.preprocessing.image import ImageDataGenerator
 import argparse
 
 parser = argparse.ArgumentParser(description='Process some integers.')
@@ -55,7 +51,7 @@ def lr_schedule(epoch):
     return lr
 
 
-def get_session(number=None):
+def get_session():
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     return tf.Session(config=config)

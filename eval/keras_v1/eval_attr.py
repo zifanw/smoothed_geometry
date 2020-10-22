@@ -1,17 +1,16 @@
 import sys
 sys.path.append("../")
+sys.path.append("../../")
 import numpy as np
-import keras
 from keras.models import load_model
 import tensorflow as tf
 import keras.backend as K
-from keras.utils.np_utils import to_categorical
 from utils import IntegratedGradientsAttack
 from utils import SimpleGradientAttack
 from utils import SmoothGradientsAttack
 from utils import UniGradientsAttack
-from wrappers import IGWrapper, SMWrapper, BallWrapper, LaplaceWrapper
-from tqdm import tqdm, trange
+from wrappers import IGWrapper, SMWrapper, BallWrapper
+from tqdm import trange
 
 
 class Eval(object):

@@ -9,15 +9,11 @@ sys.path.append("../")
 
 from time import time
 import keras.backend as K
-from keras.utils.np_utils import to_categorical
 from keras.datasets import cifar10
-from keras.optimizers import Adam, SGD
+from keras.optimizers import Adam
 import numpy as np
-import gzip
-import pickle as pkl
 from models.keras_model import res_20
 from keras.callbacks import ModelCheckpoint, ReduceLROnPlateau, EarlyStopping, LearningRateScheduler
-from keras.preprocessing.image import ImageDataGenerator
 import argparse
 from robust.smooth_space import BetaLoss
 from time import time
